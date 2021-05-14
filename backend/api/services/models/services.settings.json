@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "services",
+  "info": {
+    "name": "Services"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Service": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.service"
+    },
+    "Intro": {
+      "type": "richtext"
+    }
+  }
+}

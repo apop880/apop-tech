@@ -1,0 +1,11 @@
+body {
+    padding: 0 10px;
+}
+
+:root {
+    --palette-background-body: transparent;
+}
+
+.coral-createComment {
+    background: #FFFFFF;
+}

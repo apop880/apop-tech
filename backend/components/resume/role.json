@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_resume_roles",
+  "info": {
+    "name": "Role",
+    "icon": "box-open"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Dates": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}

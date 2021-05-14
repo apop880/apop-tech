@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_resume_educations",
+  "info": {
+    "name": "Education",
+    "icon": "school"
+  },
+  "options": {},
+  "attributes": {
+    "Degree": {
+      "type": "string"
+    },
+    "School": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Year": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_resume_recognitions",
+  "info": {
+    "name": "Recognition",
+    "icon": "award",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Award": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    }
+  }
+}

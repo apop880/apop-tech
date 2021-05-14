@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_data_categories",
+  "info": {
+    "name": "Category",
+    "icon": "bars",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Device": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.smart-home-device"
+    },
+    "Category": {
+      "type": "string"
+    }
+  }
+}

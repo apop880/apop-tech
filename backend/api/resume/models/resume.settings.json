@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "resumes",
+  "info": {
+    "name": "Resume",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Education": {
+      "type": "component",
+      "repeatable": true,
+      "component": "resume.education"
+    },
+    "Skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "resume.skills"
+    },
+    "Recognition": {
+      "type": "component",
+      "repeatable": true,
+      "component": "resume.recognition"
+    },
+    "Employer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "resume.employer"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_data_smart_home_devices",
+  "info": {
+    "name": "Smart Home Device",
+    "icon": "dice-d6",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "device_protocols": {
+      "collection": "device-protocol"
+    },
+    "Quantity": {
+      "type": "integer"
+    },
+    "Comments": {
+      "type": "text"
+    }
+  }
+}

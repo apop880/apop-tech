@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_resume_skills",
+  "info": {
+    "name": "Skills",
+    "icon": "bullhorn"
+  },
+  "options": {},
+  "attributes": {
+    "Category": {
+      "type": "string"
+    },
+    "Skills": {
+      "type": "text"
+    }
+  }
+}

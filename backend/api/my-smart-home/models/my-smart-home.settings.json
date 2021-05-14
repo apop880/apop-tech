@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "my_smart_homes",
+  "info": {
+    "name": "My Smart Home",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Category": {
+      "type": "component",
+      "repeatable": true,
+      "component": "data.category"
+    }
+  }
+}

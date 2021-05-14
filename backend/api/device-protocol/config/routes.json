@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/device-protocols",
+      "handler": "device-protocol.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/device-protocols/count",
+      "handler": "device-protocol.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/device-protocols/:id",
+      "handler": "device-protocol.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/device-protocols",
+      "handler": "device-protocol.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/device-protocols/:id",
+      "handler": "device-protocol.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/device-protocols/:id",
+      "handler": "device-protocol.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

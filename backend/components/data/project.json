@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_data_projects",
+  "info": {
+    "name": "Project",
+    "icon": "thumbtack"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Dates": {
+      "type": "string"
+    },
+    "Technologies": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}

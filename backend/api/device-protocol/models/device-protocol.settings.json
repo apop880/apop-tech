@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "device_protocols",
+  "info": {
+    "name": "Device Protocol"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    }
+  }
+}

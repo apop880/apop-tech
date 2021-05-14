@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_resume_employers",
+  "info": {
+    "name": "Employer",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Location": {
+      "type": "string"
+    },
+    "Dates": {
+      "type": "string"
+    },
+    "Roles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "resume.role"
+    }
+  }
+}

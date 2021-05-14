@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_data_services",
+  "info": {
+    "name": "Service",
+    "icon": "bullseye"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}

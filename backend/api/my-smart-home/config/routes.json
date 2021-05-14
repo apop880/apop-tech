@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/my-smart-home",
+      "handler": "my-smart-home.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/my-smart-home",
+      "handler": "my-smart-home.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/my-smart-home",
+      "handler": "my-smart-home.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

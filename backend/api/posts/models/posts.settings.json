@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Posts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "posts",
+      "dominant": true
+    },
+    "featuredPhoto": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "Body": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "PublishDate": {
+      "type": "date"
+    },
+    "Excerpt": {
+      "type": "text"
+    },
+    "RevisionDate": {
+      "type": "date"
+    },
+    "hidePhotoOnPost": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
