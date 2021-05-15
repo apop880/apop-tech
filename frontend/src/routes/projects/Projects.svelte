@@ -5,7 +5,7 @@
 </script>
   
   <svelte:head>
-    <title>Services | Alex Popoutsis</title>
+    <title>Projects | Alex Popoutsis</title>
   </svelte:head>
   
   <Hero title="Projects" subtitle="Here is a selection of projects that are ongoing or recently completed." />
