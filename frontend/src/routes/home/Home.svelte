@@ -82,9 +82,9 @@
 <div class="features">
   <h2>Featured Content</h2>
     <div class="entries">
-      <HomeContent title="My Smart Home" photo="/uploads/smartbulb_4b397c1e46.jpg" {helpers} permalink="/smart-home" description="Explore the current state of my Smart Home." />
-      <HomeContent title="Smart Home 101" photo="/uploads/puzzle_ea9a056dc0.jpg" {helpers} permalink="/posts/smart-home-101" description="Interested in Home Automation? Start Here." />
-      <HomeContent title="Freelance Services" photo="/uploads/services_2a319b3b13.jpg" {helpers} permalink="/services" description="I'm currently accepting clients for freelance website, Smart Home, or other tech services. Find out more and get in touch here." />
+      <HomeContent title="My Smart Home" photo="/uploads/smartbulb_4b397c1e46.jpg" photoAlt="Smart Bulb" {helpers} permalink="/smart-home" description="Explore the current state of my Smart Home." />
+      <HomeContent title="Smart Home 101" photo="/uploads/puzzle_ea9a056dc0.jpg" photoAlt="Puzzle Pieces" {helpers} permalink="/posts/smart-home-101" description="Interested in Home Automation? Start Here." />
+      <HomeContent title="Freelance Services" photo="/uploads/services_2a319b3b13.jpg" photoAlt="Meeting with Computers" {helpers} permalink="/services" description="I'm currently accepting clients for freelance website, Smart Home, or other tech services. Find out more and get in touch here." />
     </div>
   </div>
 
