@@ -20,7 +20,7 @@
 
     <h2><a name="contact">Contact Me</a></h2>
     <p>Get in touch below about any of the services I offer, and I'll get back to you within 2-3 business days.</p>
-    <form name="contact" method="POST" action="/success" data-netlify="true">
+    <form name="services" method="POST" action="/success" data-netlify="true">
         <label for="name">Your Name:</label> <input type="text" name="name" />
         <label for="email">Your Email:</label> <input type="email" name="email" />
         <label for="service">I'm Interested In:</label> <select name="service">
