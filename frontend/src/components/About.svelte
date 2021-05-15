@@ -11,7 +11,7 @@
 <div class="about">
   <div class="clearfix">
     <div class="picture">
-      {@html helpers.shortcode({name: 'picture', props: {src: '/images/alex2.jpg'}})}
+      {@html helpers.shortcode({name: 'picture', props: {src: '/images/alex2.jpg', alt:'Alex Popoutsis'}})}
     </div>
   <h1>About Me</h1>
   <p>My name is Alex Popoutsis, and I've been enthusiastic about technology for about as long as I've been alive, starting with mastering DOS on my family's computer before I was in first grade. Over the years, I've worked on a variety of projects, from building my own DVR using open source software to designing a number of websites.</p>
@@ -20,7 +20,7 @@
   <div class="social"><p>Follow Me On:</p>
   <p>
     <a class="button" href="https://twitter.com/apopoutsis" target="_blank"><IconifyIcon icon={twitterLogoDuotone} height={20} />Twitter</a>
-    <a class="button" href="https://linkedin.com/in/apopoutis" target="_blank"><IconifyIcon icon={linkedinLogoDuotone} height={20} />LinkedIn</a>
+    <a class="button" href="https://linkedin.com/in/apopoutsis" target="_blank"><IconifyIcon icon={linkedinLogoDuotone} height={20} />LinkedIn</a>
     <a class="button" href="https://github.com/apopoutsis" target="_blank"><IconifyIcon icon={githubLogoDuotone} height={20} />GitHub</a>
   </p>
   <p>Finding this site useful?</p>
