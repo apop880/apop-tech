@@ -21,7 +21,7 @@
   <p>
     <a class="button" href="https://twitter.com/apopoutsis" target="_blank"><IconifyIcon icon={twitterLogoDuotone} height={20} />Twitter</a>
     <a class="button" href="https://linkedin.com/in/apopoutsis" target="_blank"><IconifyIcon icon={linkedinLogoDuotone} height={20} />LinkedIn</a>
-    <a class="button" href="https://github.com/apopoutsis" target="_blank"><IconifyIcon icon={githubLogoDuotone} height={20} />GitHub</a>
+    <a class="button" href="https://github.com/apop880" target="_blank"><IconifyIcon icon={githubLogoDuotone} height={20} />GitHub</a>
   </p>
   <p>Finding this site useful?</p>
   <p>
