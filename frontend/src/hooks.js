@@ -130,6 +130,7 @@ const hooks = [
                 Title
                 featuredPhoto {
                   url
+                  alternativeText
                 }
                 hidePhotoOnPost
                 Body
