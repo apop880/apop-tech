@@ -5,7 +5,7 @@
   export let data, helpers, request, settings; // data is mainly being populated from the /plugins/edlerjs-plugin-markdown/index.js
   let { Title, Excerpt, PublishDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data.posts.find(post => post.slug === request.slug);
 
-  const MDImgRegex = /!\[([A-Za-z-_\d]*)\]\(([^)]*)\)/gm;
+  const MDImgRegex = /!\[([A-Za-z-_ \d]*)\]\(([^)]*)\)/gm;
   let match;
   while ((match = MDImgRegex.exec(Body)) !== null) {
     const [fullMatch, alt, src] = match;
