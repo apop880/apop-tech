@@ -25,10 +25,10 @@ module.exports = {
       routes: [],
       useElderJsPluginImages: true
     },
-    '@elderjs/plugin-browser-reload': {
-      // this reloads your browser when nodemon restarts your server.
-      port: 8080,
-    },
+    // '@elderjs/plugin-browser-reload': {
+    //   // this reloads your browser when nodemon restarts your server.
+    //   port: 8080,
+    // },
     '@elderjs/plugin-images': {
       folders: [
           {
@@ -40,7 +40,14 @@ module.exports = {
             output: '/uploads/', // where files should be put within the distDir defined in your elder.config.js.
         },
       ],
-  }
+    },
+    'elderjs-plugin-google-fonts': {
+      fonts: {
+        'Poppins': ['400', '700'],
+        'Alegreya': ['600'],
+      },
+      swap: true,
+    }
   },
   shortcodes: { closePattern: '}}', openPattern: '{{' },
 };

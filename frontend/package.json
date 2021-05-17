@@ -28,6 +28,7 @@
     "cors": "^2.8.5",
     "del": "^6.0.0",
     "dotenv": "^8.2.0",
+    "elderjs-plugin-google-fonts": "^1.0.2",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",
     "intersection-observer": "^0.12.0",

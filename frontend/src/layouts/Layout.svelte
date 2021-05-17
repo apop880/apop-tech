@@ -47,8 +47,6 @@
 
 <svelte:head>
   <link rel="stylesheet" href="/style.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Alegreya:wght@600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="/favicon-32x32.png">
 </svelte:head>
 <div class="wrapper">
