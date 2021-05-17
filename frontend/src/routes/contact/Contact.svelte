@@ -13,7 +13,7 @@
   <div class="container shifted">
     <p>Get in touch below with any questions or comments you may have. You can also reach me via:<br />
     Email: <a href="mailto:contact@apop.tech">contact@apop.tech</a><br />
-    Twitter: <a href="https://www.twitter.com/apopoutsis" target="_blank">@apopoutsis</a>
+    Twitter: <a href="https://www.twitter.com/apopoutsis" target="_blank" rel="noopener">@apopoutsis</a>
     </p>
     <form name="contact" method="POST" action="/success" data-netlify="true">
         <label for="name">Your Name:</label> <input type="text" name="name" />

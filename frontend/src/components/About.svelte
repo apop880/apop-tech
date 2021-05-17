@@ -19,13 +19,13 @@
   <p>Over the past couple years, I've also become especially passionate about the smart home, and the open source Home Assistant software. I intend to use this site and blog to help provide education, tips, and tricks about the smart home, and to help make its power accessible to more and more people.</p>
   <div class="social"><p>Follow Me On:</p>
   <p>
-    <a class="button" href="https://twitter.com/apopoutsis" target="_blank"><IconifyIcon icon={twitterLogoDuotone} height={20} />Twitter</a>
-    <a class="button" href="https://linkedin.com/in/apopoutsis" target="_blank"><IconifyIcon icon={linkedinLogoDuotone} height={20} />LinkedIn</a>
-    <a class="button" href="https://github.com/apop880" target="_blank"><IconifyIcon icon={githubLogoDuotone} height={20} />GitHub</a>
+    <a class="button" href="https://twitter.com/apopoutsis" target="_blank" rel="noopener"><IconifyIcon icon={twitterLogoDuotone} height={20} />Twitter</a>
+    <a class="button" href="https://linkedin.com/in/apopoutsis" target="_blank" rel="noopener"><IconifyIcon icon={linkedinLogoDuotone} height={20} />LinkedIn</a>
+    <a class="button" href="https://github.com/apop880" target="_blank" rel="noopener"><IconifyIcon icon={githubLogoDuotone} height={20} />GitHub</a>
   </p>
   <p>Finding this site useful?</p>
   <p>
-    <a class="button" href="https://buymeacoffee.com/uMhxJCzPS" target="_blank"><IconifyIcon icon={coffeeDuotone} height={20} />Buy Me a Coffee</a>
+    <a class="button" href="https://buymeacoffee.com/uMhxJCzPS" target="_blank" rel="noopener"><IconifyIcon icon={coffeeDuotone} height={20} />Buy Me a Coffee</a>
   </div>
 </div>
 </div>

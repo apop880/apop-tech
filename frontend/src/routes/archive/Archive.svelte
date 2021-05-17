@@ -154,6 +154,6 @@
       <li><a href={"/posts/" + slug}>{name}</a></li>
     {/each}
     </ul>
-    <a class="tag button" href="https://buymeacoffee.com/uMhxJCzPS" target="_blank"><IconifyIcon icon={coffeeDuotone} height={20} />Buy Me a Coffee</a>
+    <a class="tag button" href="https://buymeacoffee.com/uMhxJCzPS" target="_blank" rel="noopener"><IconifyIcon icon={coffeeDuotone} height={20} />Buy Me a Coffee</a>
   </div>
 </div>
