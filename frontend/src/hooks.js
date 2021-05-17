@@ -3,6 +3,7 @@ const glob = require('glob');
 const fs = require('fs-extra');
 const os = require('os');
 const fetch = require('node-fetch');
+const parser = require('node-html-parser');
 const dateFormatter = require('./components/dateFormatter');
 const token = process.env.STRAPI_GRAPHQL;
 const postsPerPage = process.env.POSTS_PER_PAGE || 5;
@@ -24,22 +25,24 @@ const postsPerPage = process.env.POSTS_PER_PAGE || 5;
  */
 
 const hooks = [
-  // {
-  //   hook: 'html',
-  //   name: 'compressHtml',
-  //   description: "Uses regex to compress html. This is a big no-no, but let's give it a whirl.",
-  //   priority: 1, // last please :D
-  //   run: async ({ htmlString }) => {
-  //     // this function takes the 'htmlString' prop, compresses it with Regex, then returns it.
-  //     return {
-  //       htmlString: htmlString
-  //         .replace(/[ \t]/gi, ' ')
-  //         .replace(/[ \n]/gi, ' ')
-  //         .replace(/[ ]{2,}/gi, ' ')
-  //         .replace(/>\s+</gi, '><'),
-  //     };
-  //   },
-  // },
+  {
+    hook: 'html',
+    name: 'ariaHidden',
+    description: "Parses the HTML for missing aria-hidden tags on iconify icons.",
+    priority: 1,
+    run: async ({ htmlString }) => {
+      const parsedHTML = parser.parse(htmlString);
+      const icons = parsedHTML.querySelectorAll('.iconify');
+      [...icons].forEach(icon => {
+        if(icon.getAttribute("aria-hidden") === "") {
+          icon.setAttribute("aria-hidden", "true");
+        }
+      });
+      return {
+        htmlString: parsedHTML.toString()
+      };
+    },
+  },
   {
     hook: 'bootstrap',
     name: 'copyAssetsToPublic',

@@ -23,7 +23,7 @@
     {#if "permalink" in page}
     <li><a href={page.permalink}>{page.name}</a></li>
     {:else}
-    <li class="dropdown"><span>{page.name} <IconifyIcon icon={chevronDown} inline={true} height={15} /></span>
+    <li class="dropdown"><span>{page.name} <IconifyIcon icon={chevronDown} inline={true} height={15} class="iconify" /></span>
         <div class="dropdown-content">
             {#each page.children as child}
                 <a href={child.permalink}>{child.name}</a>

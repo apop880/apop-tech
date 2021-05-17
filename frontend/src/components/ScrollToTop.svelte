@@ -13,7 +13,7 @@
         window.scroll({
             top: 0
           });    
-    }}"><IconifyIcon icon={chevronUp} inline={true} height={25} /></div>
+    }}"><IconifyIcon icon={chevronUp} inline={true} height={25} class="iconify" /></div>
 {/if}
 
 <style>
