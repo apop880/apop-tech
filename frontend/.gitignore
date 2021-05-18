@@ -6,3 +6,5 @@
 .env
 .netlify
 .vscode
+/images/sizes/
+/images/*.json
