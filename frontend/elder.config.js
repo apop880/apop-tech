@@ -40,6 +40,20 @@ module.exports = {
             output: '/uploads/', // where files should be put within the distDir defined in your elder.config.js.
         },
       ],
+      placeholder: {
+        resize: {
+          width: 20,
+          fit: sharp.fit.cover,
+        },
+        jpeg: {
+          quality: 50,
+          progressive: true,
+          optimizeScans: true,
+          chromaSubsampling: '4:2:0',
+          trellisQuantisation: true,
+          quantisationTable: 2,
+        },
+      },
     },
     'elderjs-plugin-google-fonts': {
       fonts: {
