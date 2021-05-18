@@ -26,10 +26,10 @@
   <article class="card" on:click="{handleClick}" bind:this={article}>
     <a href={permalink}>
     {#if photo !== null}
-    {@html helpers.shortcode({name: 'picture', props: {src: photo, alt: photoAlt, maxWidth: 500, class: 'picture'}})}
+    {@html helpers.shortcode({name: 'picture', props: {src: photo, alt: photoAlt, maxWidth: 350, class: 'picture'}})}
     {/if}
     {#if blogPhoto !== null}
-    {@html helpers.shortcode({name: 'picture', props: {src: blogPhoto.url, alt: blogPhoto.alternativeText, maxWidth: 500, class: 'picture'}})}
+    {@html helpers.shortcode({name: 'picture', props: {src: blogPhoto.url, alt: blogPhoto.alternativeText, maxWidth: 350, class: 'picture'}})}
     {/if}
     <h3>{title}</h3>
     {#if date}
