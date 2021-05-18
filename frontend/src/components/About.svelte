@@ -18,7 +18,7 @@
   <p>These days, my day job is with Cerner Corporation in Kansas City, where I get to play a role in helping to improve individuals' health and the health of communities by applying technology in meaningful ways. I also continue to pursue other projects in my spare time, especially home automation and full-stack web development, and am available for freelance work.</p>
   <p>Over the past couple years, I've also become especially passionate about the smart home, and the open source Home Assistant software. I intend to use this site and blog to help provide education, tips, and tricks about the smart home, and to help make its power accessible to more and more people.</p>
   <div class="social"><p>Follow Me On:</p>
-  <p>
+  <p class="multiple">
     <a class="button" href="https://twitter.com/apopoutsis" target="_blank" rel="noopener"><IconifyIcon icon={twitterLogoDuotone} height={20} class="iconify" />Twitter</a>
     <a class="button" href="https://linkedin.com/in/apopoutsis" target="_blank" rel="noopener"><IconifyIcon icon={linkedinLogoDuotone} height={20} class="iconify" />LinkedIn</a>
     <a class="button" href="https://github.com/apop880" target="_blank" rel="noopener"><IconifyIcon icon={githubLogoDuotone} height={20} class="iconify" />GitHub</a>
@@ -57,6 +57,12 @@
 
   .social p {
     margin-bottom: 0;
+  }
+
+  .multiple {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .button {
