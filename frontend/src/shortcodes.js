@@ -31,6 +31,60 @@ module.exports = [
     },
   },
 
+  {
+    /* {sizedPicture src="" alt="" float=(optional, defaults to centered) width=x}
+     * Creates a div sized to a max-width to put a picture shortcode inside.
+     * Optional float parameter will float the image to the left or the right on displays > 768px */
+    shortcode: 'sizedPicture',
+    run: async ({ props, helpers }) => {
+      const innerShortcode = helpers.images.picture(props.src, {alt: props.alt, maxWidth: props.width});
+      const className = props['src'].replace(/[^a-zA-Z]+/g, '');
+      return {
+        // this is what the shortcode is replaced with. You CAN return an empty string.
+        html: `<div class="${className}">${innerShortcode}</div>`,
+        css: `
+        .${className} {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: ${props.width}px;
+        }
+
+        ${props.float === "left" ? `
+            @media (min-width: 768px) {
+              .${className} {
+                margin: 0 10px 10px 0;
+                float: left;
+                width: ${props.width}px;
+              }
+            }
+          `
+          : props.float === "right" ? `
+              @media (min-width: 768px) {
+                .${className} {
+                  margin: 0 0 10px 10px;
+                  float: right;
+                  width: ${props.width}px;
+                }
+              }
+            `
+          : ``}
+        `
+      };
+    },
+  },
+
+  {
+    /* {external url="https://..." text="link text" /}
+     * Creates a link that opens in a new window securely */
+    shortcode: 'external',
+    run: async ({ props }) => {
+      return {
+        // this is what the shortcode is replaced with. You CAN return an empty string.
+        html: `<a href="${props.url}" target="_blank" rel="noopener">${props.text}</a>`,
+      };
+    },
+  },
+
   /**
    *
    * A common issue with static content is that someone will need to go back and update that content.
