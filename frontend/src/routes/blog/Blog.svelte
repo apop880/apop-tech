@@ -2,18 +2,8 @@
   import Comments from '../../components/Comments.svelte';
   import Hero from '../../components/Hero.svelte';
 
-  export let data, helpers, request, settings; // data is mainly being populated from the /plugins/edlerjs-plugin-markdown/index.js
-  let { Title, Excerpt, PublishDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data.posts.find(post => post.slug === request.slug);
-
-  const MDImgRegex = /!\[([A-Za-z-_ \d]*)\]\(([^)]*)\)/gm;
-  let match;
-  while ((match = MDImgRegex.exec(Body)) !== null) {
-    const [fullMatch, alt, src] = match;
-    Body = Body.replace(
-      fullMatch,
-      `<div class="md-img">${settings.shortcodes.openPattern}picture alt="${alt}" src="${src}" /${settings.shortcodes.closePattern}</div>`,
-    );
-  }
+  export let data, helpers, request;
+  let { Title, Excerpt, PublishDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data;
 </script>
 
 <style>
@@ -45,12 +35,6 @@
 
   :global(h2) {
     margin-top: 2rem;
-  }
-
-  :global(pre) {
-    background: #eee;
-    padding: 1rem;
-    border-radius: 1rem;
   }
 
   :global(blockquote) {
@@ -102,6 +86,6 @@
 {#if featuredPhoto !== null && !hidePhotoOnPost}
 {@html helpers.shortcode({name: 'picture', props: {src: featuredPhoto.url}})}
 {/if}
-{@html helpers.markdownParser.processSync(Body)}
+{@html Body}
 <Comments  hydrate-client={{}} />
 </div>

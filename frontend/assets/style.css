@@ -1,11 +1,21 @@
 .code,
 code {
-  padding: 0 0.25rem;
+  padding: 0;
   background: #eee;
   border-radius: 3px;
-  margin-right: 0.5rem;
   font-family: monospace;
   display: inline-block;
+}
+
+pre {
+  padding: 5px;
+  overflow: auto;
+  max-height: 300px;
+  max-width: 90vw;
+}
+
+pre, pre code {
+  background: #212121;
 }
 
 h1,
@@ -27,7 +37,7 @@ h3 {
   font-size: 1.5rem;
 }
 
-p, ul {
+p, ul, ol {
   font-size: 1.1rem;
 }
 
@@ -63,4 +73,8 @@ a:hover {
 
 .animatedlogo-component {
   line-height: 0;
+}
+
+ul {
+  display: flow-root;
 }

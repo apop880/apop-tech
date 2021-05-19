@@ -11,7 +11,31 @@ module.exports = {
 
   // This is telling the simple markdown plugin, which route to control.
 
-  data: {},
+  data: async ({ request, data, helpers, settings }) => {
+    let { Title, Excerpt, PublishDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data.posts.find(post => post.slug === request.slug);
+
+    const MDImgRegex = /!\[([A-Za-z-_ \d]*)\]\(([^)]*)\)/gm;
+    let match;
+    while ((match = MDImgRegex.exec(Body)) !== null) {
+      const [fullMatch, alt, src] = match;
+      Body = Body.replace(
+        fullMatch,
+        `<div class="md-img">${settings.shortcodes.openPattern}picture alt="${alt}" src="${src}" /${settings.shortcodes.closePattern}</div>`,
+      );
+    }
+
+    const MD = await helpers.markdownParser.process(Body);
+
+    return {
+      Title,
+      Excerpt,
+      PublishDate,
+      featuredPhoto,
+      hidePhotoOnPost,
+      tags,
+      Body: MD
+    }
+  },
   all: () => [],
   permalink: ({ request }) => `/posts/${request.slug}/`,
 };

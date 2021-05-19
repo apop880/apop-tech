@@ -23,6 +23,10 @@ module.exports = {
   plugins: {
     '@elderjs/plugin-markdown': {
       routes: [],
+      useSyntaxHighlighting: {
+        theme: 'material-theme-darker' // available themes: https://github.com/shikijs/shiki/blob/master/packages/themes/README.md#literal-values - try material-theme-darker
+        // theme is the only option available - for now.
+      },
       useElderJsPluginImages: true
     },
     // '@elderjs/plugin-browser-reload': {
