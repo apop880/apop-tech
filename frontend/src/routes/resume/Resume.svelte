@@ -19,7 +19,7 @@
         {#each Roles as {Name, Dates, Description}}
           <h3>{Name}</h3>
           <p><strong>{Dates}</strong></p>
-          {@html helpers.markdownParser.processSync(Description)}
+          {@html Description}
         {/each}
       </div>
     {/each}
@@ -28,7 +28,7 @@
     {#each data.resume.Education as {Degree, School, Location, Year, Description}}
       <h3>{Degree}, {School}, {Location}</h3>
       <p><strong>{Year}</strong></p>
-      {@html helpers.markdownParser.processSync(Description)}
+      {@html Description}
     {/each}
     <hr />
     <h2>Skills</h2>

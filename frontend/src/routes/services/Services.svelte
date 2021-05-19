@@ -11,11 +11,11 @@
   <Hero title="Services" />
   
   <div class="container shifted">
-    {@html helpers.markdownParser.processSync(data.services.Intro)}
+    {@html data.services.Intro}
 
     {#each data.services.Service as {Name, Description}}
       <h2>{Name}</h2>
-      {@html helpers.markdownParser.processSync(Description)}
+      {@html Description}
     {/each}
 
     <h2><a name="contact">Contact Me</a></h2>

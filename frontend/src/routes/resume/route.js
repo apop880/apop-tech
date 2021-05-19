@@ -10,7 +10,7 @@ module.exports = {
   // In this case "/simple/"
   // If permalink() is ommited, ({request}) => `/${request.slug}/` will be placed as the default.
   permalink: ({ request }) => `/${request.slug}/`,
-  data: async ({ request }) => {
+  data: async ({ helpers }) => {
     // The data function populates an object that will be in available in our Svelte template under the 'data' key.
     const url = 'http://localhost:1337/graphql';
 
@@ -50,6 +50,16 @@ module.exports = {
       })
     }).then(res => res.json())
     .then(json => json.data.resume);
+
+    for(const employer of resume.Employer) {
+      for(const role of employer.Roles) {
+        role.Description = await helpers.markdownParser.process(role.Description);
+      }
+    }
+
+    for(const education of resume.Education) {
+      education.Description = await helpers.markdownParser.process(education.Description);
+    }
     
     return {
       resume: resume

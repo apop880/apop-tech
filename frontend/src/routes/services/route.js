@@ -9,11 +9,16 @@ module.exports = {
   // In this case "/simple/"
   // If permalink() is ommited, ({request}) => `/${request.slug}/` will be placed as the default.
   permalink: ({ request }) => `/${request.slug}/`,
-  data: async ({ request }) => {
+  data: async ({ helpers }) => {
     // The data function populates an object that will be in available in our Svelte template under the 'data' key.
     const token = process.env.STRAPI_TOKEN;
     const url = 'http://localhost:1337/services';
     const services = await fetch(url, {headers: {'Authorization': token, 'accept': 'application/json'}}).then(res => res.json());
+
+    services.Intro = await helpers.markdownParser.process(services.Intro);
+    for(const service of services.Service) {
+      service.Description = await helpers.markdownParser.process(service.Description);
+    }
     
     return {
       services: services
