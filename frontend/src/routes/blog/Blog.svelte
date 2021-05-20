@@ -33,6 +33,11 @@
     background: rgba(0,157,199,1);
   }
 
+  .bmoc {
+    font-style: italic;
+    text-align: center;
+  }
+
   :global(h2) {
     margin-top: 2rem;
   }
@@ -40,7 +45,7 @@
   :global(blockquote) {
     margin: 0;
     background: #ddd;
-    padding: 3px 1.5rem 3px 3rem;
+    padding: 3px 2rem;
     position: relative;
     border-left: 10px solid rgb(34, 34, 34);
   }
@@ -87,5 +92,6 @@
 {@html helpers.shortcode({name: 'picture', props: {src: featuredPhoto.url}})}
 {/if}
 {@html Body}
+<p class="bmoc">Enjoyed this post? Consider <a class="button" href="https://buymeacoffee.com/uMhxJCzPS" target="_blank" rel="noopener">buying me a coffee</a> to fuel the creation of more content.</p>
 <Comments  hydrate-client={{}} />
 </div>
