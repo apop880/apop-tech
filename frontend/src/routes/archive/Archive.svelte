@@ -122,7 +122,7 @@
       {#each data.archive as blog}
       <div class="entry">
         <h2><a href="{helpers.permalinks.blog({ slug: blog.slug }) }">{blog.Title}</a></h2>
-        Posted {blog.PublishDate} {#each blog.tags as {Name, slug}}<a class="tag" href={"/posts/"+slug}>{Name}</a>{/each}
+        Posted {blog.PublishDate} {#if blog.RevisionDate !== null}(Revised {blog.RevisionDate}){/if} {#each blog.tags as {Name, slug}}<a class="tag" href={"/posts/"+slug}>{Name}</a>{/each}
         <p>{blog.Excerpt}</p>
       </div>
       {/each}

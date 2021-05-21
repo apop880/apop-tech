@@ -3,7 +3,7 @@
   import Hero from '../../components/Hero.svelte';
 
   export let data, helpers, request;
-  let { Title, Excerpt, PublishDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data;
+  let { Title, Excerpt, PublishDate, RevisionDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data;
 </script>
 
 <style>
@@ -86,7 +86,7 @@
 
 <div class="container shifted">
 <div class="title">
-  Posted {PublishDate} {#each tags as {Name, slug}}<a class="tag" href={"/posts/"+slug}>{Name}</a>{/each}
+  Posted {PublishDate} {#if RevisionDate !== null}(Revised {RevisionDate}){/if} {#each tags as {Name, slug}}<a class="tag" href={"/posts/"+slug}>{Name}</a>{/each}
 </div>
 {#if featuredPhoto !== null && !hidePhotoOnPost}
 {@html helpers.shortcode({name: 'picture', props: {src: featuredPhoto.url}})}

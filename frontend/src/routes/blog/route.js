@@ -12,7 +12,7 @@ module.exports = {
   // This is telling the simple markdown plugin, which route to control.
 
   data: async ({ request, data, helpers, settings }) => {
-    let { Title, Excerpt, PublishDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data.posts.find(post => post.slug === request.slug);
+    let { Title, Excerpt, PublishDate, RevisionDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data.posts.find(post => post.slug === request.slug);
 
     const MDImgRegex = /!\[([A-Za-z-_ \d]*)\]\(([^)]*)\)/gm;
     let match;
@@ -30,6 +30,7 @@ module.exports = {
       Title,
       Excerpt,
       PublishDate,
+      RevisionDate,
       featuredPhoto,
       hidePhotoOnPost,
       tags,

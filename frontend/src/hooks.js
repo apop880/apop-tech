@@ -152,6 +152,9 @@ const hooks = [
         .then(json => json.data.posts);
         posts.forEach(post => {
           post.PublishDate = dateFormatter(post.PublishDate);
+          if(post.RevisionDate !== null) {
+            post.RevisionDate = dateFormatter(post.RevisionDate);
+          }
         })
         return {
           data: {
