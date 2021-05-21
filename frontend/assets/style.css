@@ -10,7 +10,6 @@ code {
 pre {
   padding: 5px;
   overflow: auto;
-  max-height: 300px;
   max-width: 90vw;
 }
 
