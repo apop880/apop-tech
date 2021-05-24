@@ -32,6 +32,18 @@ module.exports = [
   },
 
   {
+    shortcode: 'youtube',
+    run: async ({ props }) => {
+      return {
+        html: `<div class="vidcontainer">
+        <iframe src="${props.src}" 
+        frameborder="0" allowfullscreen class="video"></iframe>
+        </div>`
+      }
+    }
+  },
+
+  {
     /* {sizedPicture src="" alt="" float=(optional, defaults to centered) width=x}
      * Creates a div sized to a max-width to put a picture shortcode inside.
      * Optional float parameter will float the image to the left or the right on displays > 768px */
