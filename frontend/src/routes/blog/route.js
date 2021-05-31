@@ -19,7 +19,7 @@ module.exports = {
       prevPost.slug = data.posts[request.index-1].slug;
       prevPost.title = data.posts[request.index-1].Title;
     }
-    if (request.index < data.posts.length) {
+    if (request.index < data.posts.length-1) {
       nextPost.slug = data.posts[request.index+1].slug;
       nextPost.title = data.posts[request.index+1].Title;
     }
