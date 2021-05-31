@@ -1,6 +1,9 @@
 <script>
   import Comments from '../../components/Comments.svelte';
   import Hero from '../../components/Hero.svelte';
+  import IconifyIcon from '@iconify/svelte';
+  import circleChevronLeft from '@iconify-icons/akar-icons/circle-chevron-left';
+  import circleChevronRight from '@iconify-icons/akar-icons/circle-chevron-right';
 
   export let data, helpers, request;
   let { Title, Excerpt, PublishDate, RevisionDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data;
@@ -36,6 +39,17 @@
   .bmoc {
     font-style: italic;
     text-align: center;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .nav div {
+    max-width: 40%;
   }
 
   :global(h2) {
@@ -93,5 +107,17 @@
 {/if}
 {@html Body}
 <p class="bmoc">Enjoyed this post? Consider <a class="button" href="https://buymeacoffee.com/uMhxJCzPS" target="_blank" rel="noopener">buying me a coffee</a> to fuel the creation of more content.</p>
-<Comments  hydrate-client={{}} />
+<div class="nav">
+{#if JSON.stringify(data.prevPost) !== '{}'}
+  <div>
+    <IconifyIcon icon={circleChevronLeft} inline={true} height={25} class="iconify" /><a href={`/posts/${data.prevPost.slug}`}>{data.prevPost.title}</a>
+  </div>
+{/if}
+{#if JSON.stringify(data.nextPost) !== '{}'}
+  <div>
+    <IconifyIcon icon={circleChevronRight} inline={true} height={25} class="iconify" /><a href={`/posts/${data.nextPost.slug}`}>{data.nextPost.title}</a>
+  </div>
+{/if}
+</div>
+<Comments hydrate-client={{}} />
 </div>

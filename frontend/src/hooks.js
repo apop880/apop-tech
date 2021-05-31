@@ -1,7 +1,6 @@
 const path = require('path');
 const glob = require('glob');
 const fs = require('fs-extra');
-const os = require('os');
 const fetch = require('node-fetch');
 const parser = require('node-html-parser');
 const dateFormatter = require('./components/dateFormatter');
@@ -171,10 +170,11 @@ const hooks = [
     description: 'Add blog posts to request',
     priority: 1, // default
     run: async ({ allRequests, data }) => {
-      const blogRequests = data.posts.map((post) => ({
+      const blogRequests = data.posts.map((post, index) => ({
         slug: post.slug,
         hero: true,
-        route: 'blog'
+        route: 'blog',
+        index: index
       }));
       return {
         allRequests: [...allRequests, ...blogRequests]
