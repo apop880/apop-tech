@@ -44,7 +44,7 @@ module.exports = [
   },
 
   {
-    /* {sizedPicture src="" alt="" float=(optional, defaults to centered) width=x}
+    /* {{sizedPicture src="" alt="" float=(optional, defaults to centered) width=x}}
      * Creates a div sized to a max-width to put a picture shortcode inside.
      * Optional float parameter will float the image to the left or the right on displays > 768px */
     shortcode: 'sizedPicture',
@@ -86,7 +86,7 @@ module.exports = [
   },
 
   {
-    /* {external url="https://..." text="link text" /}
+    /* {{external url="https://..." text="link text" /}}
      * Creates a link that opens in a new window securely */
     shortcode: 'external',
     run: async ({ props }) => {
