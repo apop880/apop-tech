@@ -68,7 +68,7 @@
 
 <Hero
   title="Hello! I'm Alex,"
-  subtitle="a healthcare IT professional, web developer, smart home aficionado, and maker of dad jokes." />
+  subtitle="a software developer specializing in web development, data engineering, home automation, and dad jokes." />
 
 <div class="container">
 <div class="blog">
