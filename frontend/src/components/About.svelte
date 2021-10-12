@@ -14,9 +14,9 @@
       {@html helpers.shortcode({name: 'picture', props: {src: '/images/alex2.jpg', alt:'Alex Popoutsis'}})}
     </div>
   <h1>About Me</h1>
-  <p>My name is Alex Popoutsis, and I've been enthusiastic about technology for about as long as I've been alive, starting with mastering DOS on my family's computer before I was in first grade. Over the years, I've worked on a variety of projects, from building my own DVR using open source software to designing a number of websites.</p>
-  <p>These days, my day job is with Cerner Corporation in Kansas City, where I get to play a role in helping to improve individuals' health and the health of communities by applying technology in meaningful ways. I also continue to pursue other projects in my spare time, especially home automation and full-stack web development, and am available for freelance work.</p>
-  <p>Over the past couple years, I've also become especially passionate about the smart home, and the open source Home Assistant software. I intend to use this site and blog to help provide education, tips, and tricks about the smart home, and to help make its power accessible to more and more people.</p>
+  <p>My name is Alex Popoutsis, and I've been enthusiastic about technology for about as long as I've been alive, starting with mastering DOS on my family's computer before I was in first grade. Over the years, I've worked on a variety of projects, everything from building my own DVR using open source software, to developing websites, to helping maintain large-scale production systems.</p>
+  <p>These days, my day job is with Trinity Life Sciences, where I develop data-driven solutions to help companies bring medical treatments to market more efficiently. In addition, I also regularly work on other projects in web development and home automation, and I am currently available for additional freelance work.</p>
+  <p>Over the past couple years, I've become especially passionate about the smart home, and the open source Home Assistant software. I intend to use a portion of this site and blog to help provide education, tips, and tricks about the smart home, and to help make its power accessible to more and more people. You'll also find content here about other technical topics across the spectrum of things I regularly work on.</p>
   <div class="social"><p>Follow Me On:</p>
   <p class="multiple">
     <a class="button" href="https://twitter.com/apopoutsis" target="_blank" rel="noopener"><IconifyIcon icon={twitterLogoDuotone} height={20} class="iconify" />Twitter</a>
