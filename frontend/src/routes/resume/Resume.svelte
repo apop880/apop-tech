@@ -18,7 +18,7 @@
       <div class="indent">
         {#each Roles as {Name, Dates, Description}}
           <h3>{Name}</h3>
-          <p><strong>{Dates}</strong></p>
+          {#if Roles.length > 1}<p><strong>{Dates}</strong></p>{/if}
           {@html Description}
         {/each}
       </div>
