@@ -122,6 +122,7 @@ const hooks = [
       description: 'Add blog posts to the data object',
       priority: 50,
       run: async ({ request, data }) => {
+        console.log(process.env.FUTURE_POSTS ?? true);
         const url = 'http://localhost:1337/graphql';
         let posts = await fetch(url, {
           method: 'POST',
@@ -293,6 +294,98 @@ const hooks = [
       };
     },
   },
+
+/*   {
+    hook: 'data',
+    name: 'RSS',
+    description: 'add RSS',
+    run: async( { data, request }) => {
+      if (request.route === "blog") {
+        console.log(data.Body);
+      }
+    }
+  } */
+
+/*   {
+    hook: 'allRequests',
+    name: 'makeRSS',
+    priority: 50,
+    description:
+      'Makes RSS file',
+    run: async ({ settings, data }) => {
+      if (!settings.build) return // dont build RSS during Dev
+      const rssExportPath = path.resolve(
+        settings.distDir,
+        `rss.xml`
+      )
+      const authorName = 'Alex Popoutsis'
+      const baseUrl = 'https://apop.tech/'
+      const rssFeedUrl = 'https://apop.tech/rss.xml'
+      const rssFaviconUrl = 'https://apop.tech/favicon.png'
+      const title = 'Apop.tech RSS Feed'
+      const description = 'RSS Feed for apop.tech'
+      const feed_url = rssFeedUrl
+      const site_url = baseUrl
+      const image_url = rssFaviconUrl
+      const docs = 'http://example.com/rss/docs.html'
+      const managingEditor = authorName
+      const webMaster = authorName
+      const copyright = '2021 ' + authorName
+      const language = 'en'
+      const categories = ['Tech', 'JavaScript', 'AWS', 'Careers', 'Blog']
+      const pubDate = new Date().toUTCString()
+      const ttl = '60'
+
+      const feed = new RSS({
+        title,
+        description,
+        feed_url,
+        site_url,
+        image_url,
+        docs,
+        managingEditor,
+        webMaster,
+        copyright,
+        language,
+        categories,
+        pubDate,
+        ttl
+      })
+
+      // fs.writeFileSync('testrss.json', JSON.stringify(_data, null, 2))
+
+      data.posts.forEach(item => {
+        const slug = item.slug || (item.data ? item.data.slug : null)
+        if (!slug) {
+          console.log('missing slug: ', { baseUrl, item })
+          return // early return
+        }
+        let itemDescription = 'No description offered'
+        // if (item.data && item.data.subtitle) itemDescription = `[${item.data.subtitle}] `
+        if (item.Excerpt) {
+          itemDescription = item.Excerpt;
+        if (item.data && item.data.url) {
+          itemDescription += ` (External Link: <a href="${item.data.url}">${item.data.url}</a>)`
+        }
+        if (item.data && item.data.canonical) {
+          itemDescription += ` (Canonical Link: <a href="${item.data.canonical}">${item.data.canonical}</a>)`
+        }
+        feed.item({
+          title: item.title || item.data.title,
+          url: baseUrl + slug,
+          description: itemDescription,
+          date: item.date || (item.data && item.data.date) || item.instances && item.instances[0].date,
+          // todo: enclosure?
+          custom_elements: customElements(item)
+        })
+      })
+      console.log('writing RSS file...')
+      fs.writeFileSync(path.resolve(rssExportPath), feed.xml())
+      console.log('writing RSS file... done')
+      
+    }
+  } */
+
 
   // {
   //   hook: 'allRequests',
