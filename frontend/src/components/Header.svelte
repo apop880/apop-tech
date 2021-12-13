@@ -15,7 +15,7 @@
         <img src="/img/logo.svg" alt="logo" />
         </a>
         {:else}
-        <AnimatedLogo hydrate-client={{}} hydrate-options={{ loading: 'eager' }} />
+        <AnimatedLogo hydrate-client={{}} hydrate-options={{ "loading": "eager" }} />
         {/if}
     <nav>
     <ul class="navList">
@@ -33,7 +33,7 @@
     {/if}
 {/each}
     </ul>
-    <div class="mobileMenu"><MobileMenu hydrate-client={{nav}} hydrate-options={{ loading: 'eager' }} /></div>
+    <div class="mobileMenu"><MobileMenu hydrate-client={{nav}} hydrate-options={{ "loading": "eager" }} /></div>
     </nav>
 </section>
 </header>

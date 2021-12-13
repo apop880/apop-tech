@@ -56,4 +56,4 @@
   </div>
   <Footer />
 </div>
-<ScrollToTop hydrate-client={{}} hydrate-options={{ loading: 'eager' }} />
+<ScrollToTop hydrate-client={{}} hydrate-options={{ "loading": "eager" }} />
