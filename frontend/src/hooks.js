@@ -4,8 +4,8 @@ const fs = require('fs-extra');
 const fetch = require('node-fetch');
 const parser = require('node-html-parser');
 const dateFormatter = require('./components/dateFormatter');
-const token = process.env.STRAPI_GRAPHQL;
 const postsPerPage = process.env.POSTS_PER_PAGE || 5;
+const showFuturePosts = parseInt(process.env.SHOW_FUTURE_POSTS) === 1;
 
 /**
  * Hooks! 
@@ -115,6 +115,33 @@ const hooks = [
   //       };
   //   },
   // },
+  {
+    hook: 'bootstrap',
+    name: 'getStrapiGQLToken',
+    description: 'Obtain a new token for Strapi GraphQL API',
+    priority: 99,
+    run: async ({ request, data }) => {
+      const url = 'http://localhost:1337/graphql';
+      let token = await fetch(url, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'accept': 'application/json'},
+        body: JSON.stringify({
+          query: `mutation {
+            login(input: { identifier: "${process.env.EMAIL}", password: "${process.env.PASSWORD}" }) {
+              jwt
+            }
+          }`
+        })
+      }).then(res => res.json())
+      .then(json => 'Bearer ' + json.data.login.jwt);
+      return {
+        data: {
+          ...data,
+          strapiGQLToken: token
+        },
+      };
+    }
+  },
 
     {
       hook: 'bootstrap',
@@ -122,14 +149,23 @@ const hooks = [
       description: 'Add blog posts to the data object',
       priority: 50,
       run: async ({ request, data }) => {
-        console.log(process.env.FUTURE_POSTS ?? true);
+        let filter = (() => {
+          if (showFuturePosts) return ``;
+          let date_ob = new Date();
+          let date = ("0" + date_ob.getDate()).slice(-2);
+          let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+          let year = date_ob.getFullYear();
+          return `where: {PublishDate_lte: "${year}-${month}-${date}"},`;
+        })();
         const url = 'http://localhost:1337/graphql';
         let posts = await fetch(url, {
           method: 'POST',
-          headers: {'Authorization': token, 'Content-Type': 'application/json', 'accept': 'application/json'},
+          headers: {'Authorization': data.strapiGQLToken, 'Content-Type': 'application/json', 'accept': 'application/json'},
           body: JSON.stringify({
             query: `{
-              posts(sort: "PublishDate:desc") {
+              posts(
+                ${filter}
+                sort: "PublishDate:desc") {
                 Title
                 featuredPhoto {
                   url
@@ -197,7 +233,7 @@ const hooks = [
       const url = 'http://localhost:1337/graphql';
       const tags = await fetch(url, {
         method: 'POST',
-        headers: {'Authorization': token, 'Content-Type': 'application/json', 'accept': 'application/json'},
+        headers: {'Authorization': data.strapiGQLToken, 'Content-Type': 'application/json', 'accept': 'application/json'},
         body: JSON.stringify({
           query: `{
             tags(sort: "name") {
@@ -213,7 +249,7 @@ const hooks = [
       for (const tag of tags) {
         const tagPosts = await fetch(url, {
           method: 'POST',
-          headers: {'Authorization': token, 'Content-Type': 'application/json', 'accept': 'application/json'},
+          headers: {'Authorization': data.strapiGQLToken, 'Content-Type': 'application/json', 'accept': 'application/json'},
           body: JSON.stringify({
             query: `{
               postsConnection(where: {tags: {id: "${tag.id}"}}) {
@@ -264,7 +300,6 @@ const hooks = [
         i++;
       })
       monthPages[monthPages.length - 1].count = Math.ceil(i / postsPerPage);
-
       return {
         data: {
           ...data,

@@ -1,5 +1,5 @@
+const { data } = require('autoprefixer');
 const fetch = require('node-fetch');
-const token = process.env.STRAPI_GRAPHQL;
 
 module.exports = {
   // the all function returns an array of all of the 'request' objects of a route.
@@ -10,13 +10,13 @@ module.exports = {
   // In this case "/simple/"
   // If permalink() is ommited, ({request}) => `/${request.slug}/` will be placed as the default.
   permalink: ({ request }) => `/${request.slug}/`,
-  data: async ({ helpers }) => {
+  data: async ({ helpers, data }) => {
     // The data function populates an object that will be in available in our Svelte template under the 'data' key.
     const url = 'http://localhost:1337/graphql';
 
     const resume = await fetch(url, {
       method: 'POST',
-      headers: {'Authorization': token, 'Content-Type': 'application/json', 'accept': 'application/json'},
+      headers: {'Authorization': data.strapiGQLToken, 'Content-Type': 'application/json', 'accept': 'application/json'},
       body: JSON.stringify({
         query: `{
           resume {
