@@ -74,6 +74,7 @@
     width: calc(100% + 1.3px);
     height: 52px;
     transform: rotateY(180deg);
+    margin-bottom: -1px;
 }
 
 .custom-shape-divider-bottom .shape-fill {
