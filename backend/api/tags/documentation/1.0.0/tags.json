@@ -568,6 +568,9 @@
                 "hidePhotoOnPost": {
                   "type": "boolean"
                 },
+                "canonicalURL": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

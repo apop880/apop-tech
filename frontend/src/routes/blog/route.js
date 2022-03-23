@@ -14,7 +14,7 @@ module.exports = {
   data: async ({ request, data, helpers, settings }) => {
     let prevPost = {};
     let nextPost = {};
-    let { Title, Excerpt, PublishDate, RevisionDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data.posts[request.index];
+    let { Title, Excerpt, PublishDate, RevisionDate, featuredPhoto, hidePhotoOnPost, canonicalURL, tags, Body } = data.posts[request.index];
     if (request.index !== 0) {
       prevPost.slug = data.posts[request.index-1].slug;
       prevPost.title = data.posts[request.index-1].Title;
@@ -43,6 +43,7 @@ module.exports = {
       RevisionDate,
       featuredPhoto,
       hidePhotoOnPost,
+      canonicalURL,
       tags,
       Body: MD,
       prevPost,

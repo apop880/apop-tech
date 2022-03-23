@@ -172,6 +172,7 @@ const hooks = [
                   alternativeText
                 }
                 hidePhotoOnPost
+                canonicalURL
                 Body
                 slug
                 PublishDate

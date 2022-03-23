@@ -6,7 +6,7 @@
   import circleChevronRight from '@iconify-icons/akar-icons/circle-chevron-right';
 
   export let data, helpers, request;
-  let { Title, Excerpt, PublishDate, RevisionDate, featuredPhoto, hidePhotoOnPost, tags, Body } = data;
+  let { Title, Excerpt, PublishDate, RevisionDate, featuredPhoto, canonicalURL, hidePhotoOnPost, tags, Body } = data;
 </script>
 
 <style>
@@ -79,6 +79,9 @@
   <meta property="og:description" content={Excerpt} />
   {#if featuredPhoto !== null}
     <meta property="og:image" content={"https://apop.tech" + featuredPhoto.url} />
+  {/if}
+  {#if canonicalURL !== null}
+    <link rel="canonical" href={canonicalURL} />
   {/if}
   <meta
     name="twitter:card"
